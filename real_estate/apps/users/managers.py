@@ -44,7 +44,7 @@ class CustomUserManager(BaseUserManager):
     def create_superuser(self, username, password, first_name, last_name,email, **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
-        extra_fields.setdefault("is_actve", True)
+        extra_fields.setdefault("is_active", True)
         
         if extra_fields.get("is_staff") is not True:
             raise ValidationError(_("superusers must have is_staff=True"))
