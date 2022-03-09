@@ -18,3 +18,7 @@ class UserSerializer(serializers.ModelSerializer):
   last_name = serializers.SerializerMethodField()
   full_name = serializers.SerializerMethodField(source="get_full_name")
   
+  class Meta:
+    model=User  
+    fields = ["id", "username", "email", "first_name", "last_name", "full_name"]
+  
