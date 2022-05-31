@@ -111,14 +111,14 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "users.User" #custom user model.
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES":(
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES":(
-        "rest_framework.permissions.IsAdminUser"
+        "rest_framework.permissions.IsAdminUser" #just added this to fix the bug
     ),
 }
 
