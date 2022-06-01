@@ -32,7 +32,7 @@ class ProfileSerializer(serializers.ModelSerializer):
   def to_representation(self, instance):
     representation=super().to_representation(instance)
     if instance.top_agent:
-      representation = ["top_agent"=True]
+      representation["top_agent"]=True
     return representation
   
 class UpdateProfileSerializer(serializers.ModelSerializer):
@@ -40,3 +40,10 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
   class Meta:
     model = Profile
     fields=["phone_number","profile_photo","about_me","license","country","city","gender","is_buyer","is_seller","is_agent",]
+    
+    def to_representation(self, instance):
+      representation=super().to_representation(instance)
+      if instance.top_agent:
+        representation["top_agent"]=True
+      return representation
+  
