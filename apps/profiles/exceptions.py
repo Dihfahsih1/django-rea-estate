@@ -1,13 +1,9 @@
-import json
+from rest_framework.exceptions import ApiException
 
-from rest_framework.renderers import JSONRenderer
-
-class ProfileJSONRenderer(JSONRenderer):
-  charset = 'utf8'
+class ProfileNotFound(ApiException):
+  status_code = 404
+  default_detail = "Requested Profile does not exist"
   
-  def render(self, data, accepted_media_type=None, renderer_context=None):
-    errors = data.get("errors", None)
-    
-    if errors is not None:
-      return super(ProfileJSONRenderer, self).render(data)
-    return json.dumps({"profile":data})
+class NotYourProfile(ApiException):
+  status_code = 403
+  default_detail = "You can't edit a profile that does not belong to you."
