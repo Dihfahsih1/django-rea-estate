@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 import random
@@ -35,6 +36,8 @@ class Property(TimeStampedUUIDModel):
   title = models.CharField(max_length=250, verbose_name=_("Property Title"))
   slug=AutoSlugField(populate_from="title", unique=True, always_update=True)
   ref_code = models.CharField(verbose_name=_("Property Reference code", max_length=225, unique=True, blank=True))
+  description=models.TextField(default=_("Default Description"), default=_("Default description...update me please ..."))
+  country=CountryField(verbose_name=_("country"), default="UG", blank_label="(select Country")
   
   
   
