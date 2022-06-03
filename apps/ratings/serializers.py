@@ -2,8 +2,8 @@ from rest_framework import serializers
 from .models import Rating
 
 class RatingSerializer(serializers.ModelSerializer):
-  rater = serializers.SerializerField(read_only=True)
-  agent = serializers.SerializerField(read_only=True)
+  rater = serializers.SerializerMethodField(read_only=True)
+  agent = serializers.SerializerMethodField(read_only=True)
 
   class Meta:
     model = Rating
