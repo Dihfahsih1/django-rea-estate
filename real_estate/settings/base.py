@@ -133,7 +133,7 @@ SIMPLE_JWT = {
     ),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),#in production make the minutes as short as possible like 10 mins
     'REFRESH_TOKEN_LIFETIME':timedelta(days=1),
-    'SIGNING_KEY':env("SIGNING_KEY"),
+    'SIGNING_KEY':env("SECRET_KEY"),
     'AUTH_HEADER_NAME':"HTTP_AUTHORIZATON",
     'AUTH_TOKEN_CLASSES':("rest_framework_simplejwt.tokens.AccessToken",),
     }
