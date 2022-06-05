@@ -118,11 +118,10 @@ AUTH_USER_MODEL = "users.User" #custom user model.
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES":(
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ),
-    "DEFAULT_PERMISSION_CLASSES":(
-        "rest_framework.permissions.IsAdminUser" #just added this to fix the bug
-    ),
+    )
+    
 }
+
 
 from datetime import timedelta
 
@@ -138,7 +137,7 @@ SIMPLE_JWT = {
     'AUTH_TOKEN_CLASSES':("rest_framework_simplejwt.tokens.AccessToken",),
     }
 DJOSER ={
-    "LOGIN_FIELD":"username",
+    "LOGIN_FIELD":"email",
     "USER_CREATE_PASSWORD_RETYPE":True,
     "USERNAME_CHANGED_EMAIL_CONFIRMATION":True,
     "PASSWORD_CHANGED_EMAIL_CONFIRMATION":True,
