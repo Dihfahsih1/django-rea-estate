@@ -3,8 +3,6 @@
 set -o errexit
 
 set -o nounset
-
-
 worker_ready(){
     celery -A real_estate inspect ping
 }

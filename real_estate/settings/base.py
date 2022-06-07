@@ -154,15 +154,14 @@ DJOSER ={
         "current_user":'apps.users.serializers.UserSerializer',
         "user_delete":'djoser.serializers.UserDeleteSerializer',
     }
-    
-    
+      
 } 
 
 import logging
 import logging.config
 from django.utils.log import DEFAULT_LOGGING
 
-logger = logging.getLogger(__name__)#create logger instance
+logger = logging.getLogger(__name__)
 
 LOG_LEVEL='INFO'
 
